@@ -18,27 +18,44 @@ const send = document.getElementById('send');
 
 const cancel = document.getElementById('cancel');
 
-const resultPrice = document.getElementById('result-price');
+const resultInfo = document.getElementById('result-info');
 
-// 2- Creare una variabile
+const resultAge = document.getElementById('result-age');
 
-let infoUserName;
+const resultPrice = document.getElementById('final-price')
 
-// 3- Utilizzare la proprietà value
+// 2- Utilizzare la proprietà value
 
 send.addEventListener('click', function() {
-
+    
     let infoUserName = fsName.value;
     console.log(infoUserName);
-    resultPrice.innerHTML = infoUserName;
+    resultInfo.innerHTML = infoUserName;
     
     let km = parseInt(number.value);
     console.log(km);
     
     let userAge = askAge.value;
     console.log(userAge);
-})
 
+    // 3- Creare costanti di calcolo
+
+    const price = (km * 0.21);
+    const underDiscount = (price - (price * 20 / 100)).toFixed(2);
+    const overDiscount = (price - (price * 40 / 100)).toFixed(2);
+    
+    if (userAge === 'Under 18') {
+        resultAge.innerHTML = 'Sconto Junior';
+        resultPrice.innerHTML = underDiscount; 
+    } else if (userAge === 'Over 65') {
+        resultAge.innerHTML = 'Sconto Senior';
+        resultPrice.innerHTML = overDiscount;
+    } else {
+        resultAge.innerHTML = 'Nessuno Sconto Applicato';
+        resultPrice.innerHTML = price; 
+    }
+
+})
 
 
 
