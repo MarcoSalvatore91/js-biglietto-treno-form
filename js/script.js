@@ -37,7 +37,8 @@ let cpCodeRandom;
 
     send.addEventListener('click', function() {
 
-        if (!fsName.value || isNaN(number.value)) 
+        // ! Validazione
+        if (!fsName.value || isNaN(number.value) || (!number.value)) 
             alert('Inserire correttamente tutti i campi!');
         else {
             let infoUserName = fsName.value;
@@ -58,13 +59,13 @@ let cpCodeRandom;
             cpCodeRandom = Math.floor(Math.random() * 10000) + 1;
             cpCode.innerHTML = cpCodeRandom;
         
-            // - Creare costanti di calcolo
+            // 4- Creare costanti di calcolo
         
             const price = (km * 0.21);
             const underDiscount = (price - (price * 20 / 100)).toFixed(2);
             const overDiscount = (price - (price * 40 / 100)).toFixed(2);
         
-            // -Condizioni sul prezzo
+            // 5- Condizioni sul prezzo
             
             if (userAge === 'Under 18') {
                 resultAge.innerHTML = 'Sconto Junior';
@@ -76,11 +77,20 @@ let cpCodeRandom;
                 resultAge.innerHTML = 'Nessuno Sconto Applicato';
                 resultPrice.innerHTML = price; 
             }
-
-        }
         
-    
+            fsName.value = '';
+            number.value = '';
+            askAge.value = '--';
+
+        }  
     })
+
+    cancel.addEventListener('click', function() {
+        fsName.value = '';
+        number.value = '';
+        askAge.value = '--';
+    })
+
 
 
 
