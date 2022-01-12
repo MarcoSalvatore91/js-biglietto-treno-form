@@ -11,48 +11,61 @@
     <title>Ticket Train</title>
 </head>
 <body>
-    <section id="info-ticket">
-        <div>
-            <p id="name">Nome Cognome</p>
-            <input type="text" id="fsname" name="fsname">
-        </div>
-        <div>
-            <p id="kilometers">Km da percorrere</p>
-            <input type="text" id="number" name="number">
-        </div>
-        <div>
-            <label id="age" for="age">Fascia d'età</label>
-            <select name="age" id="askAge">
-                <option value="--">--</option>
-                <option value="Under 18">Under 18</option>
-                <option value="Over 65">Over 65</option>
-            </select>
-        </div>
-        <div>
-            <button id="send">Genera</button>
-            <button id="cancel">Annulla</button>
-        </div>
-    </section>
-    <section id="price-ticket">
-        <div>
-            <span>Dettagli Passeggero</span>
-            <p id="result-info"></p>
-        </div>
-        <div>
-            <span>Offerta</span>
-            <p id="result-age"></p>
-        </div>
-        <div>
-            <p>Carrozza</p>
-        </div>
-        <div>
-            <p>Codice CP</p>
-        </div>
-        <div>
-            <p>Costo Biglietto</p>
-            <p id="final-price"></p>
-        </div>
-    </section>
+    <div class="row">
+        <section class="col-12" id="info-ticket">
+            <h1 class="text-center m-3 text-danger">Calcola il prezzo del tuo biglietto</h1>
+            <div class="row justify-content-betweeen">
+                <div class="col-4 align-self-center text-center">
+                    <span id="name">Nome Cognome</span>
+                    <input type="text" id="fsname" name="fsname">
+                </div>
+                <div class="col-4 align-self-center text-center">
+                    <span id="kilometers">Km da percorrere</span>
+                    <input type="text" id="number" name="number">
+                </div>
+                <div class="col-4 align-self-center text-center">
+                    <label id="age" for="age">Fascia d'età</label>
+                    <select name="age" id="askAge">
+                        <option value="--">--</option>
+                        <option value="Under 18">Under 18</option>
+                        <option value="Over 65">Over 65</option>
+                    </select>
+                </div>
+                <div class="col-12 my-5 align-self-center text-center">
+                    <button id="send">Genera</button>
+                    <button id="cancel">Annulla</button>
+                </div>
+            </div>
+        </section>
+        <section id="price-ticket">
+            <h1 class="text-center m-3 text-danger">Il tuo biglietto</h1>
+            <div class="row">
+                <div class="col-12 ps-5">
+                    <h3>Dettagli Passeggero</h3>
+                </div>
+                <div class="col-4 ps-5">
+                    <h5>Nome Passeggero</h5>
+                    <span id="result-info"></span>
+                </div>
+                <div class="col-2 text-center">
+                    <h5>Offerta</h3>
+                    <span id="result-age"></span>
+                </div>
+                <div class="col-2 text-center">
+                    <h5>Carrozza</h3>
+                    <span id="carrage"></span>
+                </div>
+                <div class="col-2 text-center">
+                    <h5>Codice CP</h3>
+                    <span id="cp-code"></span>
+                </div>
+                <div class="col-2 text-center">
+                    <h5>Costo Biglietto</h3>
+                    <span id="final-price"></span>
+                </div>
+            </div>
+        </section>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
