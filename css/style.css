@@ -1,3 +1,23 @@
-#price-ticket {
+/* Generics */
+
+body {
+   background-color: rgb(185,20,80);
+}
+
+/* Info Biglietto */
+
+#price-ticket > div {
    height: 200px; 
 }
+
+/* Risultato dati compilati */
+
+#info-user {
+   background-color: grey;
+}
+
+.user-price {
+   height: 100px;
+}
+
+
