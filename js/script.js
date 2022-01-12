@@ -35,46 +35,52 @@ let cpCodeRandom;
 
 // 2- Utilizzare la proprietà value
 
-send.addEventListener('click', function() {
+    send.addEventListener('click', function() {
+
+        if (!fsName.value || isNaN(number.value)) 
+            alert('Inserire correttamente tutti i campi!');
+        else {
+            let infoUserName = fsName.value;
+            console.log(infoUserName);
+            resultInfo.innerHTML = infoUserName;
+            
+            let km = parseInt(number.value);
+            console.log(km);
+            
+            let userAge = askAge.value;
+            console.log(userAge);
+        
+            // 3- Generare numero carrozza e codice cp 
+        
+            carrageRandom = Math.floor(Math.random() * 12) + 1;
+            carrage.innerHTML = carrageRandom;
+        
+            cpCodeRandom = Math.floor(Math.random() * 10000) + 1;
+            cpCode.innerHTML = cpCodeRandom;
+        
+            // - Creare costanti di calcolo
+        
+            const price = (km * 0.21);
+            const underDiscount = (price - (price * 20 / 100)).toFixed(2);
+            const overDiscount = (price - (price * 40 / 100)).toFixed(2);
+        
+            // -Condizioni sul prezzo
+            
+            if (userAge === 'Under 18') {
+                resultAge.innerHTML = 'Sconto Junior';
+                resultPrice.innerHTML = underDiscount; 
+            } else if (userAge === 'Over 65') {
+                resultAge.innerHTML = 'Sconto Senior';
+                resultPrice.innerHTML = overDiscount;
+            } else {
+                resultAge.innerHTML = 'Nessuno Sconto Applicato';
+                resultPrice.innerHTML = price; 
+            }
+
+        }
+        
     
-    let infoUserName = fsName.value;
-    console.log(infoUserName);
-    resultInfo.innerHTML = infoUserName;
-    
-    let km = parseInt(number.value);
-    console.log(km);
-    
-    let userAge = askAge.value;
-    console.log(userAge);
-
-    // 3- Generare numero carrozza e codice cp 
-
-    carrageRandom = Math.floor(Math.random() * 12) + 1;
-    carrage.innerHTML = carrageRandom;
-
-    cpCodeRandom = Math.floor(Math.random() * 10000) + 1;
-    cpCode.innerHTML = cpCodeRandom;
-
-    // - Creare costanti di calcolo
-
-    const price = (km * 0.21);
-    const underDiscount = (price - (price * 20 / 100)).toFixed(2);
-    const overDiscount = (price - (price * 40 / 100)).toFixed(2);
-
-    // -Condizioni sul prezzo
-    
-    if (userAge === 'Under 18') {
-        resultAge.innerHTML = 'Sconto Junior';
-        resultPrice.innerHTML = underDiscount; 
-    } else if (userAge === 'Over 65') {
-        resultAge.innerHTML = 'Sconto Senior';
-        resultPrice.innerHTML = overDiscount;
-    } else {
-        resultAge.innerHTML = 'Nessuno Sconto Applicato';
-        resultPrice.innerHTML = price; 
-    }
-
-})
+    })
 
 
 
