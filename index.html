@@ -11,10 +11,10 @@
     <title>Ticket Train</title>
 </head>
 <body>
-    <div class="row">
+    <div class="row container-fluid">
         <section class="col-12" id="info-ticket">
-            <h1 class="text-center m-3 text-danger">Calcola il prezzo del tuo biglietto</h1>
-            <div class="row justify-content-betweeen">
+            <h1 class="text-center m-3 text-white">Calcola il prezzo del tuo biglietto</h1>
+            <div class="row justify-content-betweeen border py-3 bg-white container m-auto">
                 <div class="col-4 align-self-center text-center">
                     <span id="name">Nome Cognome</span>
                     <input type="text" id="fsname" name="fsname">
@@ -37,31 +37,35 @@
                 </div>
             </div>
         </section>
+        <!-- Info Biglietto -->
         <section id="price-ticket">
-            <h1 class="text-center m-3 text-danger">Il tuo biglietto</h1>
-            <div class="row">
-                <div class="col-12 ps-5">
-                    <h3>Dettagli Passeggero</h3>
-                </div>
-                <div class="col-4 ps-5">
-                    <h5>Nome Passeggero</h5>
-                    <span id="result-info"></span>
-                </div>
-                <div class="col-2 text-center">
-                    <h5>Offerta</h3>
-                    <span id="result-age"></span>
-                </div>
-                <div class="col-2 text-center">
-                    <h5>Carrozza</h3>
-                    <span id="carrage"></span>
-                </div>
-                <div class="col-2 text-center">
-                    <h5>Codice CP</h3>
-                    <span id="cp-code"></span>
-                </div>
-                <div class="col-2 text-center">
-                    <h5>Costo Biglietto</h3>
-                    <span id="final-price"></span>
+            <h1 class="text-center m-3 text-white">Il tuo biglietto</h1>
+            <div class="bg-white container m-auto py-3">
+                <h3>Dettagli Passeggero</h3>
+                <!-- Risultato dati compilati -->
+                <div class="row border user-price">
+                    <div id="info-user" class="col-4 py-3">
+                        <div class="h-100">
+                            <h5>Nome Passeggero</h5>
+                            <span id="result-info"></span>
+                        </div>
+                    </div>
+                    <div class="padding-center col-2 text-center py-3">
+                        <h5>Offerta</h3>
+                        <span id="result-age"></span>
+                    </div>
+                    <div class="padding-center col-2 text-center py-3">
+                        <h5>Carrozza</h3>
+                        <span id="carrage"></span>
+                    </div>
+                    <div class="padding-center col-2 text-center py-3">
+                        <h5>Codice CP</h3>
+                        <span id="cp-code"></span>
+                    </div>
+                    <div class="padding-center col-2 text-center py-3">
+                        <h5>Costo Biglietto</h3>
+                        <span id="final-price"></span>
+                    </div>
                 </div>
             </div>
         </section>
