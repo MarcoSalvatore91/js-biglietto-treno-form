@@ -11,27 +11,31 @@
     <title>Ticket Train</title>
 </head>
 <body>
-    <div>
-        <p id="name"></p>
-        <input type="text" id="fname" name="fname">
-    </div>
-    <div>
-        <p id="kilometers"></p>
-        <input type="number" id="number" name="number">
-    </div>
-    <div>
-        <label id="age" for="age"></label>
-        <select name="age" id="age">
-            <option value="--">--</option>
-            <option value="Minorenne"></option>
-            <option value="Maggiorenne"></option>
-            <option value="Over 65"></option>
-        </select>
-    </div>
-    <div>
-        <button id="send"></button>
-        <button id="cancel"></button>
-    </div>
+    <section id="info-ticket">
+        <div>
+            <p id="name">Nome Cognome</p>
+            <input type="text" id="fsname" name="fsname">
+        </div>
+        <div>
+            <p id="kilometers">Km da percorrere</p>
+            <input type="text" id="number" name="number">
+        </div>
+        <div>
+            <label id="age" for="age">Fascia d'età</label>
+            <select name="age" id="askAge">
+                <option value="--">--</option>
+                <option value="Minorenne">Minorenne</option>
+                <option value="Over 65">Over 65</option>
+            </select>
+        </div>
+        <div>
+            <button id="send">Genera</button>
+            <button id="cancel">Annulla</button>
+        </div>
+    </section>
+    <section id="price-ticket">
+        <p id="result-price"></p>
+    </section>
     <script src="js/script.js"></script>
 </body>
 </html>
