@@ -69,13 +69,13 @@ let cpCodeRandom;
             
             if (userAge === 'Under 18') {
                 resultAge.innerHTML = 'Sconto Junior';
-                resultPrice.innerHTML = underDiscount; 
+                resultPrice.innerHTML = `${underDiscount}€`; 
             } else if (userAge === 'Over 65') {
                 resultAge.innerHTML = 'Sconto Senior';
-                resultPrice.innerHTML = overDiscount;
+                resultPrice.innerHTML = `${overDiscount}€`;
             } else {
                 resultAge.innerHTML = 'Nessuno Sconto Applicato';
-                resultPrice.innerHTML = price; 
+                resultPrice.innerHTML = `${price}€`; 
             }
         
             fsName.value = '';
